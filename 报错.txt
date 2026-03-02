@@ -15,14 +15,14 @@ This may take a few minutes depending on your connection.
 OK
 File written successfully
 OK
+File written successfully
+File written successfully
 OK
 File written successfully
 OK
-File written successfully
-File written successfully
 DEBUG-SANDBOX: PROOT=/data/user/0/com.foxdebug.acode/files/libproot-xed.so
 DEBUG-SANDBOX: PREFIX=/data/user/0/com.foxdebug.acode/files
-DEBUG-SANDBOX: init-alpine.sh=-rwx------ 1 u0_a135 u0_a135 8932 2026-03-02 16:03 /data/user/0/com.foxdebug.acode/files/init-alpine.sh
+DEBUG-SANDBOX: init-alpine.sh=-rwx------ 1 u0_a135 u0_a135 8932 2026-03-02 16:29 /data/user/0/com.foxdebug.acode/files/init-alpine.sh
 DEBUG-SANDBOX: /bin/sh in rootfs=lrwxrwxrwx 1 u0_a135 u0_a135 12 2024-12-05 20:20 /data/user/0/com.foxdebug.acode/files/alpine/bin/sh -> /bin/busybox
 DEBUG-SANDBOX: busybox=-rwxr-xr-x 1 u0_a135 u0_a135 919304 2024-11-20 05:09 /data/user/0/com.foxdebug.acode/files/alpine/bin/busybox
 DEBUG-SANDBOX: running proot with args: --kill-on-exit -b /apex -b /odm -b /system/product -b /system -b /system/system_ext -b /vendor -b /linkerconfig/ld.config.txt -b /linkerconfig/com.android.art/ld.config.txt -b /sdcard -b /storage -b /dev -b /data -b /dev/urandom:/dev/random -b /proc -b /sys -b /data/user/0/com.foxdebug.acode/files -b /data/user/0/com.foxdebug.acode/files/public:/public -b /data/user/0/com.foxdebug.acode/files/alpine/tmp:/dev/shm -b /proc/self/fd:/dev/fd -b /proc/self/fd/0:/dev/stdin -b /proc/self/fd/1:/dev/stdout -b /proc/self/fd/2:/dev/stderr -r /data/user/0/com.foxdebug.acode/files/alpine -0 --link2symlink -L
@@ -51,10 +51,10 @@ DEBUG-ALPINE: script started, args=--installing
 + apk update
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
-4 unavailable, 0 stale; 15 distinct packages available
+v3.21.6-32-g793041abc71 [https://dl-cdn.alpinelinux.org/alpine/v3.21/community]
+2 unavailable, 0 stale; 19706 distinct packages available
 + apk add --no-scripts bash command-not-found tzdata wget
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
-fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
 + '[' 4 -ne 0 ]
 + echo -e '\e[33;1m[!] \e[0mRetrying with mirror...\e[0m'
 [!] Retrying with mirror...
@@ -64,47 +64,46 @@ fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar
 + apk update
 fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
 fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
-v3.21.6-32-g793041abc71 [https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community]
-2 unavailable, 0 stale; 19706 distinct packages available
+4 unavailable, 0 stale; 15 distinct packages available
 + apk add --no-scripts bash command-not-found tzdata wget
+fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
+(1/10) Installing ncurses-terminfo-base (6.5_p20241006-r3)
+(2/10) Installing libncursesw (6.5_p20241006-r3)
+(3/10) Installing readline (8.2.13-r0)
+(4/10) Installing bash (5.2.37-r0)
+(5/10) Installing command-not-found (0.3-r1)
+(6/10) Installing tzdata (2025c-r0)
+(7/10) Installing libunistring (1.2-r0)
+(8/10) Installing libidn2 (2.3.7-r0)
+(9/10) Installing pcre2 (10.43-r0)
+(10/10) Installing wget (1.25.0-r0)
+OK: 15 MiB in 25 packages
 + mv /etc/apk/repositories.bak /etc/apk/repositories
 + '[' -f /usr/bin/bash ]
 + '[' -f /usr/bin/bash ]
 + apk info -e bash
-+ echo -e '\e[31;1m[!] \e[0mPackage bash still missing after install attempts\e[0m'
-[!] Package bash still missing after install attempts
-+ PACKAGES_OK=false
 + apk info -e command-not-found
-+ echo -e '\e[31;1m[!] \e[0mPackage command-not-found still missing after install attempts\e[0m'
-[!] Package command-not-found still missing after install attempts
-+ PACKAGES_OK=false
 + apk info -e tzdata
-+ echo -e '\e[31;1m[!] \e[0mPackage tzdata still missing after install attempts\e[0m'
-[!] Package tzdata still missing after install attempts
-+ PACKAGES_OK=false
 + apk info -e wget
-+ echo -e '\e[31;1m[!] \e[0mPackage wget still missing after install attempts\e[0m'
-[!] Package wget still missing after install attempts
-+ PACKAGES_OK=false
-+ '[' false '=' true ]
-+ echo -e '\e[31;1m[!] \e[0mSome packages failed to install\e[0m'
-[!] Some packages failed to install
++ '[' true '=' true ]
++ echo -e '\e[34m[*] \e[0mUse \e[32mapk\e[0m to install new packages\e[0m'
+[*] Use apk to install new packages
 + '[' '!' -f /linkerconfig/ld.config.txt ]
 + '[' --installing '=' --installing ]
 + echo 'Configuring timezone...'
 Configuring timezone...
 + '[' -n Asia/Shanghai ]
 + '[' -f /usr/share/zoneinfo/Asia/Shanghai ]
-+ echo 'Failed to detect timezone'
-Failed to detect timezone
++ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
++ echo Asia/Shanghai
++ echo 'Timezone set to: Asia/Shanghai'
+Timezone set to: Asia/Shanghai
 + mkdir -p /data/user/0/com.foxdebug.acode/files/.configured
-+ '[' false '=' true ]
-+ echo 'Some packages failed to install (network issue?).'
-Some packages failed to install (network issue?).
-+ echo 'Terminal will use /bin/sh. To install bash later, run:'
-Terminal will use /bin/sh. To install bash later, run:
-+ echo '  apk update && apk add bash wget'
-apk update && apk add bash wget
++ '[' true '=' true ]
+Installation completed.
++ echo 'Installation completed.'
 + exit 0
 DEBUG-SANDBOX: proot exited with code 0
 exit 0
+Error: Installation failed:
