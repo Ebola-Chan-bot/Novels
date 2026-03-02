@@ -1,0 +1,110 @@
+🚀 Installing Terminal Environment...
+This may take a few minutes depending on your connection.
+
+⬇️  Downloading sandbox filesystem...
+⬇️  Downloading axs...
+🐧  F-Droid flavor detected, downloading additional files...
+⬇️  Downloading compatibility layer...
+⬇️  Downloading supporting library...
+✅  All downloads completed
+📁  Setting up directories...
+📦  Extracting sandbox filesystem...
+⚙️  Applying basic configuration...
+✅  Extraction complete
+⚙️  Updating sandbox enviroment...
+OK
+File written successfully
+OK
+OK
+File written successfully
+OK
+File written successfully
+File written successfully
+DEBUG-SANDBOX: PROOT=/data/user/0/com.foxdebug.acode/files/libproot-xed.so
+DEBUG-SANDBOX: PREFIX=/data/user/0/com.foxdebug.acode/files
+DEBUG-SANDBOX: init-alpine.sh=-rwx------ 1 u0_a135 u0_a135 8932 2026-03-02 16:03 /data/user/0/com.foxdebug.acode/files/init-alpine.sh
+DEBUG-SANDBOX: /bin/sh in rootfs=lrwxrwxrwx 1 u0_a135 u0_a135 12 2024-12-05 20:20 /data/user/0/com.foxdebug.acode/files/alpine/bin/sh -> /bin/busybox
+DEBUG-SANDBOX: busybox=-rwxr-xr-x 1 u0_a135 u0_a135 919304 2024-11-20 05:09 /data/user/0/com.foxdebug.acode/files/alpine/bin/busybox
+DEBUG-SANDBOX: running proot with args: --kill-on-exit -b /apex -b /odm -b /system/product -b /system -b /system/system_ext -b /vendor -b /linkerconfig/ld.config.txt -b /linkerconfig/com.android.art/ld.config.txt -b /sdcard -b /storage -b /dev -b /data -b /dev/urandom:/dev/random -b /proc -b /sys -b /data/user/0/com.foxdebug.acode/files -b /data/user/0/com.foxdebug.acode/files/public:/public -b /data/user/0/com.foxdebug.acode/files/alpine/tmp:/dev/shm -b /proc/self/fd:/dev/fd -b /proc/self/fd/0:/dev/stdin -b /proc/self/fd/1:/dev/stdout -b /proc/self/fd/2:/dev/stderr -r /data/user/0/com.foxdebug.acode/files/alpine -0 --link2symlink -L
+proot warning: can't sanitize binding "/proc/self/fd/0": No such file or directory
+proot warning: can't sanitize binding "/proc/self/fd/1": No such file or directory
+proot warning: can't sanitize binding "/proc/self/fd/2": No such file or directory
+DEBUG-ALPINE: script started, args=--installing
++ export 'PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/share/bin:/usr/share/sbin:/usr/local/bin:/usr/local/sbin:/system/bin:/system/xbin:/data/user/0/com.foxdebug.acode/files/local/bin'
++ export 'PS1=\[\e[38;5;46m\]\u\[\033[39m\]@localhost \[\033[39m\]\w \[\033[0m\]\$ '
++ export 'HOME=/home'
++ export 'TERM=xterm-256color'
++ required_packages='bash command-not-found tzdata wget'
++ missing_packages=
++ apk info -e bash
++ missing_packages=' bash'
++ apk info -e command-not-found
++ missing_packages=' bash command-not-found'
++ apk info -e tzdata
++ missing_packages=' bash command-not-found tzdata'
++ apk info -e wget
++ missing_packages=' bash command-not-found tzdata wget'
++ PACKAGES_OK=true
++ '[' -n ' bash command-not-found tzdata wget' ]
++ echo -e '\e[34;1m[*] \e[0mInstalling important packages\e[0m'
+[*] Installing important packages
++ apk update
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
+4 unavailable, 0 stale; 15 distinct packages available
++ apk add --no-scripts bash command-not-found tzdata wget
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
++ '[' 4 -ne 0 ]
++ echo -e '\e[33;1m[!] \e[0mRetrying with mirror...\e[0m'
+[!] Retrying with mirror...
++ cp /etc/apk/repositories /etc/apk/repositories.bak
++ echo https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main
++ echo https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community
++ apk update
+fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+fetch https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
+v3.21.6-32-g793041abc71 [https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.21/community]
+2 unavailable, 0 stale; 19706 distinct packages available
++ apk add --no-scripts bash command-not-found tzdata wget
++ mv /etc/apk/repositories.bak /etc/apk/repositories
++ '[' -f /usr/bin/bash ]
++ '[' -f /usr/bin/bash ]
++ apk info -e bash
++ echo -e '\e[31;1m[!] \e[0mPackage bash still missing after install attempts\e[0m'
+[!] Package bash still missing after install attempts
++ PACKAGES_OK=false
++ apk info -e command-not-found
++ echo -e '\e[31;1m[!] \e[0mPackage command-not-found still missing after install attempts\e[0m'
+[!] Package command-not-found still missing after install attempts
++ PACKAGES_OK=false
++ apk info -e tzdata
++ echo -e '\e[31;1m[!] \e[0mPackage tzdata still missing after install attempts\e[0m'
+[!] Package tzdata still missing after install attempts
++ PACKAGES_OK=false
++ apk info -e wget
++ echo -e '\e[31;1m[!] \e[0mPackage wget still missing after install attempts\e[0m'
+[!] Package wget still missing after install attempts
++ PACKAGES_OK=false
++ '[' false '=' true ]
++ echo -e '\e[31;1m[!] \e[0mSome packages failed to install\e[0m'
+[!] Some packages failed to install
++ '[' '!' -f /linkerconfig/ld.config.txt ]
++ '[' --installing '=' --installing ]
++ echo 'Configuring timezone...'
+Configuring timezone...
++ '[' -n Asia/Shanghai ]
++ '[' -f /usr/share/zoneinfo/Asia/Shanghai ]
++ echo 'Failed to detect timezone'
+Failed to detect timezone
++ mkdir -p /data/user/0/com.foxdebug.acode/files/.configured
++ '[' false '=' true ]
++ echo 'Some packages failed to install (network issue?).'
+Some packages failed to install (network issue?).
++ echo 'Terminal will use /bin/sh. To install bash later, run:'
+Terminal will use /bin/sh. To install bash later, run:
++ echo '  apk update && apk add bash wget'
+apk update && apk add bash wget
++ exit 0
+DEBUG-SANDBOX: proot exited with code 0
+exit 0
